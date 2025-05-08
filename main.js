@@ -51,3 +51,27 @@ console.log(longBooks);
 
 const longBooksTitles = longBooks.map(b => b.title);
 console.log(longBooksTitles);
+
+longBooksTitles.forEach(t => console.log(t));
+
+// snack 2
+const availableBooks = books.filter(b => b.available);
+console.log(availableBooks);
+
+const discountedBooks = availableBooks.map(b => {
+    const price = parseFloat(b.price.replace("€", ""));
+    console.log(price);
+    const discountedPrice = (price - (price / 5)).toFixed(2);
+    return {
+        ...b,
+        price: `${discountedPrice}€`
+    };
+});
+console.log(discountedBooks);
+
+const fullPricedBook = discountedBooks.find(b => {
+    const price = parseFloat(b.price.replace("€", ""));
+    console.log(price);
+    return price % 1 === 0; // numero intero diviso per 1 dà resto 0
+})
+console.log(fullPricedBook);
