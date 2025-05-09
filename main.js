@@ -89,3 +89,13 @@ if (areAuthorsAdults) {
     authors.sort((a, b) => b.age - a.age);
 }
 console.log(authors);
+
+// snack 4
+const ages = authors.map(a => a.age);
+console.log(ages);
+
+const agesSum = ages.reduce((acc, a) => acc + a, 0);
+console.log(agesSum);
+
+const agesAverage = agesSum / ages.length;
+console.log(agesAverage);
