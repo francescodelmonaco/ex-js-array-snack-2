@@ -75,3 +75,17 @@ const fullPricedBook = discountedBooks.find(b => {
     return price % 1 === 0; // numero intero diviso per 1 dà resto 0
 })
 console.log(fullPricedBook);
+
+// snack 3
+const authors = books.map(b => b.author);
+console.log(authors);
+
+const areAuthorsAdults = authors.every(a => a.age >= 18);
+console.log(areAuthorsAdults);
+
+if (areAuthorsAdults) {
+    authors.sort((a, b) => a.age - b.age);
+} else {
+    authors.sort((a, b) => b.age - a.age);
+}
+console.log(authors);
